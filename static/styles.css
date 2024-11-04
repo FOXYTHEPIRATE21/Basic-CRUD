@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    background-color: #f0f2f5;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Títulos y textos */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #0062cc;
+    border-color: #005cbf;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: #e63946;
+    border-color: #e63946;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #d62839;
+    transform: translateY(-2px);
+}
+
+/* Tabla */
+.table {
+    margin-top: 20px;
+}
+
+.table thead th {
+    background-color: #0062cc;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    text-align: center;
+    padding: 12px;
+}
+
+/* Formulario */
+.form-control {
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #005cbf;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Mensaje de éxito */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
