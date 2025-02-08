@@ -7,16 +7,17 @@
 <form action="{{ url_for('create') }}" method="POST" class="mb-4">
     <div class="form-group">
         <label for="name">Nombre</label>
-        <input type="text" name="name" id="name" class="form-control" required>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre" required>
     </div>
     <div class="form-group">
         <label for="description">Descripción</label>
-        <input type="text" name="description" id="description" class="form-control">
+        <input type="text" name="description" id="description" class="form-control" placeholder="Ingrese la descripción">
     </div>
     <button type="submit" class="btn btn-primary">Crear</button>
 </form>
 
 <!-- Tabla de items -->
+{% if items %}
 <table class="table table-striped">
     <thead>
         <tr>
@@ -33,10 +34,14 @@
             <td>{{ item.name }}</td>
             <td>{{ item.description }}</td>
             <td>
-                <a href="{{ url_for('delete', item_id=id) }}" class="btn btn-danger btn-sm">Eliminar</a>
+                <a href="{{ url_for('edit', item_id=id) }}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="{{ url_for('delete', item_id=id) }}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este item?');">Eliminar</a>
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+{% else %}
+<div class="alert alert-info">No hay items disponibles. ¡Crea uno nuevo!</div>
+{% endif %}
 {% endblock %}

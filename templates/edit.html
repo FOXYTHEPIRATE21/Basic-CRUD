@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Editar Item</h1>
+
+<!-- Formulario para editar un item -->
+<form action="{{ url_for('update', item_id=item_id) }}" method="POST" class="mb-4">
+    <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" class="form-control" value="{{ item.name }}" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Descripción</label>
+        <input type="text" name="description" id="description" class="form-control" value="{{ item.description }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
